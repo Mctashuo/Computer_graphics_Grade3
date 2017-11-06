@@ -1,0 +1,42 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CRectangle - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP565B.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/CRectangle.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\work\workplace c++\acomputer\CRectangle\CRectangle.cpp"
+]
+Creating command line "cl.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSP565B.tmp" 
+Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP565C.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/CRectangle.pdb" /debug /machine:I386 /out:"Debug/CRectangle.exe" /pdbtype:sept 
+".\Debug\CRectangle.obj"
+".\Debug\CRectangleDoc.obj"
+".\Debug\CRectangleView.obj"
+".\Debug\MainFrm.obj"
+".\Debug\Rectangle.obj"
+".\Debug\StdAfx.obj"
+".\Debug\CRectangle.res"
+]
+Creating command line "link.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSP565C.tmp"
+<h3>Output Window</h3>
+Compiling...
+CRectangle.cpp
+D:\work\workplace c++\acomputer\CRectangle\CRectangle.cpp(64) : error C2146: syntax error : missing ';' before identifier 'r'
+D:\work\workplace c++\acomputer\CRectangle\CRectangle.cpp(64) : warning C4551: function call missing argument list
+D:\work\workplace c++\acomputer\CRectangle\CRectangle.cpp(64) : error C2065: 'r' : undeclared identifier
+D:\work\workplace c++\acomputer\CRectangle\CRectangle.cpp(65) : error C2228: left of '.DoModal' must have class/struct/union type
+Ö´ÐÐ cl.exe Ê±³ö´í.
+
+
+
+<h3>Results</h3>
+CRectangle.exe - 1 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
