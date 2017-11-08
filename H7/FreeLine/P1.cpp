@@ -1,0 +1,33 @@
+// P1.cpp: implementation of the CP1 class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "stdafx.h"
+#include "FreeLine.h"
+#include "P1.h"
+
+#ifdef _DEBUG
+#undef THIS_FILE
+static char THIS_FILE[]=__FILE__;
+#define new DEBUG_NEW
+#endif
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+CP1::CP1()
+{
+
+}
+
+CP1::~CP1()
+{
+
+}
+
+CP1::CP1(int m_x,int m_y)
+{
+	x = m_x;
+	y = m_y;
+}
