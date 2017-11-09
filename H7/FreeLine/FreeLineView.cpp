@@ -28,6 +28,7 @@ BEGIN_MESSAGE_MAP(CFreeLineView, CView)
 	ON_COMMAND(IDX_BEZIER, OnBezier)
 	ON_WM_LBUTTONDOWN()
 	ON_COMMAND(IDX_BSIMPLE, OnBsimple)
+	ON_WM_RBUTTONDOWN()
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -135,6 +136,15 @@ void CFreeLineView::OnLButtonDown(UINT nFlags, CPoint point)
 	CView::OnLButtonDown(nFlags, point);
 }
 
+void CFreeLineView::OnRButtonDown(UINT nFlags, CPoint point) 
+{
+	// TODO: Add your message handler code here and/or call default
+	if(IsBezier == FALSE)
+	{
+		bs.DrawBsimple(GetDC());
+	}
+	CView::OnRButtonDown(nFlags, point);
+}
 
 
 void CFreeLineView::OnBezier() 
@@ -147,7 +157,7 @@ void CFreeLineView::OnBezier()
 
 	
 	IsBezier = TRUE;
-
+	b.init();
 
 
 
@@ -157,10 +167,13 @@ void CFreeLineView::OnBezier()
 void CFreeLineView::OnBsimple() 
 {
 	// TODO: Add your command handler code here
-	CDC *pDC = GetDC();
+
 	RedrawWindow();
 	IsBezier = FALSE;
+	bs.init();
+	
 
 
 	
 }
+

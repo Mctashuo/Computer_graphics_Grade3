@@ -22,11 +22,12 @@ public:
 	int pointCount; //顶点计数
 
 public:
-	void DrawBsimple();	//draw Bsimple Line
+	void DrawBsimple(CDC *pDC);	//draw Bsimple Line
 	void ConnectPoint(CDC *pDC);	//连接顶点
-	void DrawPrinciples();	//draw 几何Principles
-	void RButton();
+	void DrawPrinciples(CDC *pDC);	//draw 几何Principles
+	void RButton(CDC *pDC);
 	void LButton(CPoint,CDC *pDC);
+	void init();
 
 
 };

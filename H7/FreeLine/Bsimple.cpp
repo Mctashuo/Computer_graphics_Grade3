@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "FreeLine.h"
 #include "Bsimple.h"
+#define ROUND(a) int(a+0.5)//ËÄÉáÎå
 
 #ifdef _DEBUG
 #undef THIS_FILE
@@ -18,16 +19,22 @@ static char THIS_FILE[]=__FILE__;
 
 CBsimple::CBsimple()
 {
+	init();
+}
+
+CBsimple::~CBsimple()
+{
 	point = new CPoint[10];
 	start = TRUE;
 	pointCount = 0;
 }
 
-CBsimple::~CBsimple()
+void CBsimple::init()
 {
-
+	point = new CPoint[10];
+	start = TRUE;
+	pointCount = 0;
 }
-
 
 void CBsimple::ConnectPoint(CDC *pDC)
 {
@@ -54,12 +61,45 @@ void CBsimple::ConnectPoint(CDC *pDC)
 	NewPen.DeleteObject();
 }
 
-void CBsimple::DrawBsimple()
+void CBsimple::DrawBsimple(CDC *pDC)
 {
+	double F03,F13,F23,F33;
+	long sx,sy;
+	
+	sx = ROUND((point[0].x + point[1].x * 4.0 + point[2].x) / 6);
+	sy = ROUND((point[0].y + point[1].y * 4.0 + point[2].y) / 6);
+
+	pDC->MoveTo(sx,sy);
+
+	CPen NewPen,*pOldPen;
+	NewPen.CreatePen(PS_SOLID,1,RGB(0,0,0));
+	pOldPen = pDC->SelectObject(&NewPen);
+
+
+	for(int i = 1;i < pointCount - 3;i++)
+	{
+		for(double t = 0;t <= 1;t += 1.0 /10.0)
+		{
+			F03 = (-t*t*t+3*t*t-3*t+1)/6;
+			F13=(3*t*t*t-6*t*t+4)/6;
+			F23=(-3*t*t*t+3*t*t+3*t+1)/6;
+			F33=t*t*t/6;
+			sx=ROUND(point[i-1].x*F03+point[i].x*F13+point[i+1].x*F23+point[i+2].x*F33);
+			sy=ROUND(point[i-1].y*F03+point[i].y*F13+point[i+1].y*F23+point[i+2].y*F33);
+			pDC->LineTo(sx,sy);
+
+
+		}
+	}
+
+	pDC->SelectObject(pOldPen);
+	NewPen.DeleteObject();
+
+	
 
 }
 
-void CBsimple::DrawPrinciples()
+void CBsimple::DrawPrinciples(CDC *pDC)
 {
 
 }
@@ -78,7 +118,11 @@ void CBsimple::LButton(CPoint p,CDC *pDC)
 	}
 }
 
-void CBsimple::RButton()
+void CBsimple::RButton(CDC *pDC)
 {
-
+	if(pointCount != 0)
+	{
+		start = FALSE;
+		DrawBsimple(pDC);
+	}
 }

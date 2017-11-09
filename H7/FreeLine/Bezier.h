@@ -25,6 +25,7 @@ public:
 	void MouseMove(CPoint);
 	void ButtonDown();
 	void ButtonUp();
+	void init();
 	//int P[4][2];	//¶¥µã¼¯
 	CP1 P[4];
 };

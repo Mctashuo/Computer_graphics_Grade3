@@ -20,6 +20,17 @@ static char THIS_FILE[]=__FILE__;
 
 CBezier::CBezier()
 {
+	init();
+
+}
+
+CBezier::~CBezier()
+{
+
+}
+
+void CBezier::init()
+{
 	LeftCheck = FALSE;
 	MoveCheck = FALSE;
 	Point = -1;
@@ -32,15 +43,7 @@ CBezier::CBezier()
 	P[3].x = 1500;P[3].y = 675;
 
 
-
 }
-
-CBezier::~CBezier()
-{
-
-}
-
-
 void CBezier::Bezier3(CDC *pDC)
 {
 

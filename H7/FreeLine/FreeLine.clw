@@ -38,7 +38,7 @@ Type=0
 HeaderFile=FreeLineView.h
 ImplementationFile=FreeLineView.cpp
 Filter=C
-LastObject=IDX_BSIMPLE
+LastObject=CFreeLineView
 BaseClass=CView
 VirtualFilter=VWC
 

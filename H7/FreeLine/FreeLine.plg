@@ -6,16 +6,17 @@
 --------------------Configuration: FreeLine - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP3649.tmp" with contents
+Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP98F5.tmp" with contents
 [
 /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/FreeLine.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
 "D:\work\Grade3\Graphic\H7\FreeLine\Bsimple.cpp"
 ]
-Creating command line "cl.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSP3649.tmp" 
-Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP365A.tmp" with contents
+Creating command line "cl.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSP98F5.tmp" 
+Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP9906.tmp" with contents
 [
 /nologo /subsystem:windows /incremental:yes /pdb:"Debug/FreeLine.pdb" /debug /machine:I386 /out:"Debug/FreeLine.exe" /pdbtype:sept 
 .\Debug\Bezier.obj
+.\Debug\Bsimple.obj
 .\Debug\FreeLine.obj
 .\Debug\FreeLineDoc.obj
 .\Debug\FreeLineView.obj
@@ -23,9 +24,8 @@ Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP365A.tmp" with 
 .\Debug\P1.obj
 .\Debug\StdAfx.obj
 .\Debug\FreeLine.res
-.\Debug\Bsimple.obj
 ]
-Creating command line "link.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSP365A.tmp"
+Creating command line "link.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSP9906.tmp"
 <h3>Output Window</h3>
 Compiling...
 Bsimple.cpp
