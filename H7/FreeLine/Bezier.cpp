@@ -114,3 +114,50 @@ void CBezier::DrawBezier(CDC *pDC,CRect Rect)
 
 	NewPen.DeleteObject();
 }
+
+
+void CBezier::MouseMove(CPoint point) 
+{
+	if(MoveCheck == TRUE)
+	{
+		P[Point].x = point.x;
+		P[Point].y = point.y;
+	}
+	Point = -1;
+
+	int i =0;
+	for(;i < 4;i++)
+	{
+		if((point.x-P[i].x)*(point.x-P[i].x)+(point.y-P[i].y)*(point.y-P[i].y)<100)
+		{
+			Point=i;
+			LeftCheck=TRUE;
+			SetCursor(LoadCursor(NULL,IDC_SIZEALL));//改变为十字箭头光标
+			break;
+		}
+	}
+
+	if(10==i)
+	{
+		Point=-1;
+	}
+}
+
+
+void CBezier::ButtonDown()
+{
+
+	if(TRUE==LeftCheck)
+	{
+		MoveCheck=TRUE;
+	}
+}
+
+void CBezier::ButtonUp()
+{
+	LeftCheck = FALSE;
+	MoveCheck = FALSE;
+	Point = 0;
+	
+
+}

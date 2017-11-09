@@ -20,8 +20,11 @@ public:
 public:
 	BOOL LeftCheck;	//左键是否按下
 	BOOL MoveCheck;	//鼠标移动检测
-	
+
 	int Point;	//鼠标选中的点
+	void MouseMove(CPoint);
+	void ButtonDown();
+	void ButtonUp();
 	//int P[4][2];	//顶点集
 	CP1 P[4];
 };

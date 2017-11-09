@@ -8,7 +8,7 @@
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
-
+#include "Bezier.h"
 
 class CFreeLineView : public CView
 {
@@ -19,7 +19,7 @@ protected: // create from serialization only
 // Attributes
 public:
 	CFreeLineDoc* GetDocument();
-
+	
 // Operations
 public:
 
@@ -29,6 +29,8 @@ public:
 	public:
 	virtual void OnDraw(CDC* pDC);  // overridden to draw this view
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
+	protected:
+	virtual BOOL OnCommand(WPARAM wParam, LPARAM lParam);
 	//}}AFX_VIRTUAL
 
 // Implementation
@@ -40,6 +42,8 @@ public:
 #endif
 
 protected:
+	BOOL IsBezier;
+	CBezier b;
 
 // Generated message map functions
 protected:

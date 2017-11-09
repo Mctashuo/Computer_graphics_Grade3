@@ -8,7 +8,6 @@
 #include "FreeLineView.h"
 
 
-#include "Bezier.h"
 
 
 #ifdef _DEBUG
@@ -59,6 +58,14 @@ void CFreeLineView::OnDraw(CDC* pDC)
 {
 	CFreeLineDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
+
+
+	CRect Rect;
+	GetClientRect(&Rect);
+	if(IsBezier == TRUE)
+	{
+		b.DrawBezier(pDC,Rect);
+	}
 	// TODO: add draw code for native data here
 }
 
@@ -89,37 +96,64 @@ CFreeLineDoc* CFreeLineView::GetDocument() // non-debug version is inline
 void CFreeLineView::OnMouseMove(UINT nFlags, CPoint point) 
 {
 	// TODO: Add your message handler code here and/or call default
-	
+	if(IsBezier == TRUE) {
+		b.MouseMove(point);
+		Invalidate(FALSE);	
+	}
+	else
+	{
+		
+	}
 	CView::OnMouseMove(nFlags, point);
 }
 
 void CFreeLineView::OnLButtonUp(UINT nFlags, CPoint point) 
 {
 	// TODO: Add your message handler code here and/or call default
-	
+	if(IsBezier == TRUE) {
+		b.ButtonUp();
+	}
+	else
+	{
+		
+	}
 	CView::OnLButtonUp(nFlags, point);
 }
 
 void CFreeLineView::OnLButtonDown(UINT nFlags, CPoint point) 
 {
 	// TODO: Add your message handler code here and/or call default
-	
+	if(IsBezier == TRUE) {
+		b.ButtonDown();
+	}
+	else
+	{
+		
+	}
 	CView::OnLButtonDown(nFlags, point);
 }
+
+
 
 void CFreeLineView::OnBezier() 
 {
 	// TODO: Add your command handler code here
 	CDC *pDC = GetDC();
-	CRect Rect;
-	GetClientRect(&Rect);
+
 	CDC MemDC;
 	MemDC.CreateCompatibleDC(GetDC());
 
-	CBezier b;
-
-	b.DrawBezier(pDC,Rect);
-
+	
+	IsBezier = TRUE;
 
 
+
+
+}
+
+BOOL CFreeLineView::OnCommand(WPARAM wParam, LPARAM lParam) 
+{
+	// TODO: Add your specialized code here and/or call the base class
+	
+	return CView::OnCommand(wParam, lParam);
 }
