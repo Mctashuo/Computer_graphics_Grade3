@@ -42,7 +42,7 @@ void CBsimple::ConnectPoint(CDC *pDC)
 	NewPen.CreatePen(PS_SOLID,3,RGB(0,0,0));
 	pOldPen = pDC->SelectObject(&NewPen);
 
-	for(int i = 0;i < pointCount;i++)
+	for(int i = 0;i < pointCount;i++)	//连接顶点
 	{
 		if(i == 0)
 		{
@@ -66,7 +66,7 @@ void CBsimple::DrawBsimple(CDC *pDC)
 	double F03,F13,F23,F33;
 	long sx,sy;
 	
-	sx = ROUND((point[0].x + point[1].x * 4.0 + point[2].x) / 6);
+	sx = ROUND((point[0].x + point[1].x * 4.0 + point[2].x) / 6);	//算每一个点
 	sy = ROUND((point[0].y + point[1].y * 4.0 + point[2].y) / 6);
 
 	pDC->MoveTo(sx,sy);
@@ -95,16 +95,33 @@ void CBsimple::DrawBsimple(CDC *pDC)
 	pDC->SelectObject(pOldPen);
 	NewPen.DeleteObject();
 
-	
+	DrawPrinciples(pDC);
 
 }
 
-void CBsimple::DrawPrinciples(CDC *pDC)
+void CBsimple::DrawPrinciples(CDC *pDC)	//draw Struct
 {
+	CPen NewPen,*pOldPen;
+	NewPen.CreatePen(PS_DOT,1,RGB(0,0,0));
+	pOldPen = pDC->SelectObject(&NewPen);	
+	int x,y;
+
+	for(int i = 1;i < pointCount - 2;i++)
+	{
+		pDC->MoveTo(point[i - 1].x,point[i - 1].y);
+		pDC->LineTo(point[i + 1].x,point[i + 1].y);
+		x = ((point[i - 1].x + point[i + 1].x) / 2);
+		y = ((point[i - 1].y + point[i + 1].y) / 2);
+
+		pDC->MoveTo(x,y);
+		pDC->LineTo(point[i].x,point[i].y);
+	}
+	pDC->SelectObject(pOldPen);
+	NewPen.DeleteObject();
 
 }
 
-void CBsimple::LButton(CPoint p,CDC *pDC)
+void CBsimple::LButton(CPoint p,CDC *pDC)	//获取点
 {
 	if(start)
 	{
@@ -124,5 +141,6 @@ void CBsimple::RButton(CDC *pDC)
 	{
 		start = FALSE;
 		DrawBsimple(pDC);
+	
 	}
 }
