@@ -38,7 +38,7 @@ Type=0
 HeaderFile=FreeLineView.h
 ImplementationFile=FreeLineView.cpp
 Filter=C
-LastObject=CFreeLineView
+LastObject=IDX_BSIMPLE
 BaseClass=CView
 VirtualFilter=VWC
 
@@ -88,7 +88,7 @@ CommandCount=13
 
 [MNU:IDR_MAINFRAME (Chinese (ÖÐ¹ú))]
 Type=1
-Class=?
+Class=CFreeLineView
 Command1=IDX_BEZIER
 Command2=IDX_BSIMPLE
 CommandCount=2

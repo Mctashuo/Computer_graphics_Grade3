@@ -94,6 +94,10 @@ SOURCE=.\Bezier.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\Bsimple.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\FreeLine.cpp
 # End Source File
 # Begin Source File
@@ -128,6 +132,10 @@ SOURCE=.\StdAfx.cpp
 # Begin Source File
 
 SOURCE=.\Bezier.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Bsimple.h
 # End Source File
 # Begin Source File
 
