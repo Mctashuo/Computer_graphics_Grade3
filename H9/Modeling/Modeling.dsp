@@ -114,6 +114,10 @@ SOURCE=.\ModelingView.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\P2.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\P3.cpp
 # End Source File
 # Begin Source File
@@ -148,6 +152,10 @@ SOURCE=.\ModelingDoc.h
 # Begin Source File
 
 SOURCE=.\ModelingView.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\P2.h
 # End Source File
 # Begin Source File
 

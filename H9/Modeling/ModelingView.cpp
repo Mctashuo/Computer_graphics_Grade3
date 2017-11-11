@@ -83,8 +83,7 @@ CModelingDoc* CModelingView::GetDocument() // non-debug version is inline
 void CModelingView::OnPerspective() 
 {
 	// TODO: Add your command handler code here
-	p.ReadVertex();
-	p.ReadFace();
+
 
 
 

@@ -6,32 +6,30 @@
 --------------------Configuration: Modeling - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSPE088.tmp" with contents
+Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSPB084.tmp" with contents
 [
 /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Modeling.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
-"D:\work\Grade3\Graphic\H9\Modeling\ModelingView.cpp"
-"D:\work\Grade3\Graphic\H9\Modeling\Face.cpp"
+"D:\work\Grade3\Graphic\H9\Modeling\Perspective.cpp"
 ]
-Creating command line "cl.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSPE088.tmp" 
-Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSPE089.tmp" with contents
+Creating command line "cl.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSPB084.tmp" 
+Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSPB095.tmp" with contents
 [
 /nologo /subsystem:windows /incremental:yes /pdb:"Debug/Modeling.pdb" /debug /machine:I386 /out:"Debug/Modeling.exe" /pdbtype:sept 
+.\Debug\Face.obj
 .\Debug\MainFrm.obj
 .\Debug\Modeling.obj
 .\Debug\ModelingDoc.obj
 .\Debug\ModelingView.obj
+.\Debug\P2.obj
+.\Debug\P3.obj
+.\Debug\Perspective.obj
 .\Debug\StdAfx.obj
 .\Debug\Modeling.res
-.\Debug\Perspective.obj
-.\Debug\P3.obj
-.\Debug\Face.obj
 ]
-Creating command line "link.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSPE089.tmp"
+Creating command line "link.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSPB095.tmp"
 <h3>Output Window</h3>
 Compiling...
-ModelingView.cpp
-Face.cpp
-Generating Code...
+Perspective.cpp
 Linking...
 
 

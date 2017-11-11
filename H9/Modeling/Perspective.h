@@ -11,21 +11,29 @@
 
 #include "P3.h"
 #include "Face.h"
+#include "P2.h"
+
 
 class CPerspective  
 {
 
 public:
-	CP3 P[4];
-	CFace F[4];
+	CP3 P[4];	//点表
+	CFace F[4];	//面表
+	double R,The,Phi,d;	//球坐标，d视距
+	double k[9];	//运算量
+	CP3 ViewPoint;	//视点球坐标
+	CP2 ScreenPoint;	//屏幕坐标系
 public:
 	CPerspective();
 	virtual ~CPerspective();
 
-	void ReadVertex();
+	void ReadVertex();	//读取点表
 	
 	void ReadFace();
-
+	
+	void initPerPar();	//初始化透视参数
+	void Perspective(CP3 );		//透视投影
 	void init();
 
 };

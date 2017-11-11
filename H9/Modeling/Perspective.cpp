@@ -21,7 +21,7 @@ static char THIS_FILE[]=__FILE__;
 
 CPerspective::CPerspective()
 {
-
+	init();
 }
 
 CPerspective::~CPerspective()
@@ -29,7 +29,13 @@ CPerspective::~CPerspective()
 
 }
 
-
+void CPerspective::init()
+{
+	R = 800.0;d = 1000; Phi = 0; The = -90;
+	ReadVertex();
+	ReadFace();
+	initPerPar();
+}
 void CPerspective::ReadVertex()
 {
 	int a = 400;
@@ -47,3 +53,34 @@ void CPerspective::ReadFace()
 	F[2].vN = 3;F[2].vI[0] = 0;F[2].vI[1] = 3;F[2].vI[2] = 1;
 	F[3].vN = 3;F[3].vI[0] = 1;F[3].vI[1] = 3;F[3].vI[2] = 2;
 }
+
+void CPerspective::initPerPar()
+{
+	k[1]=sin(PI*The/180);
+	k[2]=sin(PI*Phi/180);
+	k[3]=cos(PI*The/180);
+	k[4]=cos(PI*Phi/180);
+	k[5]=k[3]*k[2];
+	k[6]=k[1]*k[2];
+	k[7]=k[3]*k[4];
+	k[8]=k[1]*k[4];
+	ViewPoint.x=R*k[5];//用户坐标系的视点球坐标
+	ViewPoint.y=R*k[6];
+	ViewPoint.z=R*k[4];
+	
+}
+void CPerspective::Perspective(CP3 P)
+{
+	//书上185
+	CP3 ViewPoint;
+	ViewPoint.x = -k[1] * P.x + k[3] * P.y;	//观察坐标系坐标
+	ViewPoint.y = -k[7] * P.x - k[8] * P.y + k[2] * P.z;
+	ViewPoint.z = -k[5] * P.x - k[6] * P.y - k[4] * P.z + R;
+	
+	ScreenPoint.x = ROUND(d * ViewPoint.x / ViewPoint.z);
+	ScreenPoint.y = ROUND(d * ViewPoint.x / ViewPoint.z);
+
+
+}
+
+
