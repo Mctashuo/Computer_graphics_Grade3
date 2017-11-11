@@ -38,7 +38,7 @@ ImplementationFile=ModelingView.cpp
 Filter=C
 BaseClass=CView
 VirtualFilter=VWC
-LastObject=IDX_PERSPECTIVE
+LastObject=CModelingView
 
 
 [CLS:CMainFrame]

@@ -13,7 +13,7 @@ class CFace
 {
 public:
 	int vN;		//面片的顶点数
-	int *vI;	//面片的顶点索引
+	int vI[4];	//面片的顶点索引
 public:
 	CFace();
 	virtual ~CFace();	

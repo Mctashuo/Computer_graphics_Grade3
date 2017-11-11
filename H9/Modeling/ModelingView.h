@@ -48,6 +48,7 @@ protected:
 protected:
 	//{{AFX_MSG(CModelingView)
 	afx_msg void OnPerspective();
+	afx_msg void OnTimer(UINT nIDEvent);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

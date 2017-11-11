@@ -22,6 +22,7 @@ IMPLEMENT_DYNCREATE(CModelingView, CView)
 BEGIN_MESSAGE_MAP(CModelingView, CView)
 	//{{AFX_MSG_MAP(CModelingView)
 	ON_COMMAND(IDX_PERSPECTIVE, OnPerspective)
+	ON_WM_TIMER()
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -54,6 +55,8 @@ void CModelingView::OnDraw(CDC* pDC)
 	CModelingDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 	// TODO: add draw code for native data here
+
+	//ReleaseDC(pDC);
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -83,8 +86,21 @@ CModelingDoc* CModelingView::GetDocument() // non-debug version is inline
 void CModelingView::OnPerspective() 
 {
 	// TODO: Add your command handler code here
+	RedrawWindow();
+	CRect Rect;
+	GetClientRect(&Rect);
+	p.init();
+	p.DrawBuffer(GetDC(),Rect);
+	SetTimer(1,15,NULL);
 
+}
 
+void CModelingView::OnTimer(UINT nIDEvent) 
+{
+	// TODO: Add your message handler code here and/or call default
+	CRect Rect;
+	GetClientRect(&Rect);
+	p.Play(GetDC(),Rect);
 
-
+	CView::OnTimer(nIDEvent);
 }

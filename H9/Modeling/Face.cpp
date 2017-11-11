@@ -18,8 +18,7 @@ static char THIS_FILE[]=__FILE__;
 
 CFace::CFace()
 {
-	int p[4];
-	vI = p;
+
 }
 
 CFace::~CFace()
