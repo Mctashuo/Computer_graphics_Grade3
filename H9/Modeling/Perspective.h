@@ -23,7 +23,7 @@ public:
 	double R,The,Phi,d;	//球坐标，d视距
 	double k[9];	//运算量
 	CP3 ViewPoint;	//视点球坐标
-	CP2 ScreenPoint;	//屏幕坐标系
+	CPoint ScreenPoint;	//屏幕坐标系
 public:
 	CPerspective();
 	virtual ~CPerspective();
@@ -36,6 +36,8 @@ public:
 	void Perspective(CP3 );		//透视投影
 	void init();
 
+	void DrawBuffer(CDC *,CRect);
+	void DrawFace(CDC *pDC,int NumberFace);
 };
 
 #endif // !defined(AFX_PERSPECTIVE_H__BF77B1D3_1B47_442A_98DA_61B81092901C__INCLUDED_)
