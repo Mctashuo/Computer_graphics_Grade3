@@ -15,6 +15,8 @@
 #include "H6.h"
 #include "H7.h"
 #include "H8.h"
+#include "H9.h"
+#include "H10.h"
 class CPolygon_FillView : public CView
 {
 protected: // create from serialization only
@@ -53,6 +55,9 @@ protected:
 	CH6 h6;
 	CH7 h7;
 	CH8 h8;
+	CH9 h9;
+	CH10 h10;
+	BOOL seed;
 // Generated message map functions
 protected:
 	//{{AFX_MSG(CPolygon_FillView)
@@ -63,6 +68,9 @@ protected:
 	afx_msg void OnH6();
 	afx_msg void OnH7();
 	afx_msg void OnH8();
+	afx_msg void OnH9();
+	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+	afx_msg void OnH10();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

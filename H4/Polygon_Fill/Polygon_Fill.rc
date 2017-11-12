@@ -83,6 +83,8 @@ BEGIN
     MENUITEM "    6",                       IDX_H6
     MENUITEM "    7",                       IDX_H7
     MENUITEM "    8",                       IDX_H8
+    MENUITEM "    9",                       IDX_H9
+    MENUITEM "    10",                      IDX_H10
 END
 
 

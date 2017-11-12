@@ -27,6 +27,9 @@ BEGIN_MESSAGE_MAP(CPolygon_FillView, CView)
 	ON_COMMAND(IDX_H6, OnH6)
 	ON_COMMAND(IDX_H7, OnH7)
 	ON_COMMAND(IDX_H8, OnH8)
+	ON_COMMAND(IDX_H9, OnH9)
+	ON_WM_LBUTTONDOWN()
+	ON_COMMAND(IDX_H10, OnH10)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -36,6 +39,7 @@ END_MESSAGE_MAP()
 CPolygon_FillView::CPolygon_FillView()
 {
 	// TODO: add construction code here
+	seed = FALSE;
 
 }
 
@@ -191,4 +195,34 @@ void CPolygon_FillView::OnH8()
 	h8.FillColor = RGB(0,255,0);
 
 	h8.Fill(pDC);
+}
+
+void CPolygon_FillView::OnH9() 
+{
+	// TODO: Add your command handler code here
+	RedrawWindow();
+	CDC *pDC = GetDC();
+	h9.init(pDC);
+	seed = TRUE;
+}
+
+
+void CPolygon_FillView::OnLButtonDown(UINT nFlags, CPoint point) 
+{
+	// TODO: Add your message handler code here and/or call default
+	if(seed == TRUE)
+	{
+		h10.start(GetDC(),point);
+		seed = FALSE;
+	}
+
+	CView::OnLButtonDown(nFlags, point);
+}
+
+void CPolygon_FillView::OnH10() 
+{
+	// TODO: Add your command handler code here
+	CDC *pDC = GetDC();
+	h10.init(pDC);
+	seed = TRUE;
 }

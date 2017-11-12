@@ -110,6 +110,10 @@ SOURCE=.\H.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\H10.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\H2.cpp
 # End Source File
 # Begin Source File
@@ -138,11 +142,19 @@ SOURCE=.\H8.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\H9.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\HR.cpp
 # End Source File
 # Begin Source File
 
 SOURCE=.\MainFrm.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\PFill.cpp
 # End Source File
 # Begin Source File
 
@@ -163,6 +175,10 @@ SOURCE=.\Polygon_FillView.cpp
 # Begin Source File
 
 SOURCE=.\Px.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Stack_Node.cpp
 # End Source File
 # Begin Source File
 
@@ -195,6 +211,10 @@ SOURCE=.\H.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\H10.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\H2.h
 # End Source File
 # Begin Source File
@@ -223,11 +243,19 @@ SOURCE=.\H8.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\H9.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\HR.h
 # End Source File
 # Begin Source File
 
 SOURCE=.\MainFrm.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\PFill.h
 # End Source File
 # Begin Source File
 
@@ -248,6 +276,10 @@ SOURCE=.\Px.h
 # Begin Source File
 
 SOURCE=.\Resource.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Stack_Node.h
 # End Source File
 # Begin Source File
 

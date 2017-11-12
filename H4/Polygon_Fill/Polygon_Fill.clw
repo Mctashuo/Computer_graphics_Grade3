@@ -38,6 +38,7 @@ ImplementationFile=Polygon_FillView.cpp
 Filter=C
 BaseClass=CView
 VirtualFilter=VWC
+LastObject=CPolygon_FillView
 
 
 [CLS:CMainFrame]
@@ -45,7 +46,7 @@ Type=0
 HeaderFile=MainFrm.h
 ImplementationFile=MainFrm.cpp
 Filter=T
-LastObject=IDX_H8
+LastObject=IDX_H10
 BaseClass=CFrameWnd
 VirtualFilter=fWC
 
@@ -77,7 +78,9 @@ Command4=IDX_H5
 Command5=IDX_H6
 Command6=IDX_H7
 Command7=IDX_H8
-CommandCount=7
+Command8=IDX_H9
+Command9=IDX_H10
+CommandCount=9
 
 [ACL:IDR_MAINFRAME]
 Type=1
