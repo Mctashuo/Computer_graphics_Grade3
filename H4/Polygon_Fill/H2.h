@@ -8,20 +8,16 @@
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
-#include "Fill.h"
-#include "Px.h"
-class H2  
+#include "HR.h"
+class H2  :public CHR
 {
 public:
 	H2();
 	virtual ~H2();
 	
 	void ReadPoint();
-	void DrawRect(CDC *,CPoint *);
-	void FillRect(CDC *pDC,CPoint *P);
 
-public:
-	CPoint P1[4],P2[4];
+
 
 };
 

@@ -66,8 +66,8 @@ LINK32=link.exe
 # PROP Output_Dir "Debug"
 # PROP Intermediate_Dir "Debug"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Yu"stdafx.h" /FD /GZ  /c
-# ADD CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Yu"stdafx.h" /FD /GZ   /c
+# ADD BASE CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Yu"stdafx.h" /FD /GZ /c
+# ADD CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Yu"stdafx.h" /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x409 /d "_DEBUG" /d "_AFXDLL"
@@ -102,7 +102,31 @@ SOURCE=.\Fill.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\H.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\H2.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\H3.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\H4.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\H5.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\H6.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\HR.cpp
 # End Source File
 # Begin Source File
 
@@ -151,7 +175,31 @@ SOURCE=.\Fill.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\H.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\H2.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\H3.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\H4.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\H5.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\H6.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\HR.h
 # End Source File
 # Begin Source File
 

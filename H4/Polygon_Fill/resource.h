@@ -6,6 +6,10 @@
 #define IDR_MAINFRAME                   128
 #define IDR_POLYGOTYPE                  129
 #define IDX_2                           32771
+#define IDX_H3                          32772
+#define IDX_H4                          32773
+#define IDX_H5                          32774
+#define IDX_H6                          32775
 
 // Next default values for new objects
 // 
@@ -13,7 +17,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        130
-#define _APS_NEXT_COMMAND_VALUE         32772
+#define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1000
 #define _APS_NEXT_SYMED_VALUE           101
 #endif

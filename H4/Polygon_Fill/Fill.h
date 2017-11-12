@@ -23,12 +23,14 @@ public:
 	void AddEt(CAET *NewEdge);
 	void EtOrder();
 	void Gouraud(CDC *pDC);
+	
 public:
 	
 	int PNum;	//顶点个数
 	CPx *P;		//顶点坐标数组
 	CAET *HeadE,*CurrentE,*Edge;	//有效边表
 	CBucket *HeadB,*CurrentB;	//桶表
+	COLORREF Color;
 
 };
 

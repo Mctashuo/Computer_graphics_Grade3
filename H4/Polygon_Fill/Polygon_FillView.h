@@ -9,7 +9,10 @@
 #pragma once
 #endif // _MSC_VER > 1000
 #include "H2.h"
-
+#include "H3.h"
+#include "H4.h"
+#include "H5.h"
+#include "H6.h"
 class CPolygon_FillView : public CView
 {
 protected: // create from serialization only
@@ -42,10 +45,18 @@ public:
 
 protected:
 	H2 h2;
+	CH3 h3;
+	CH4 h4;
+	CH5 h5;
+	CH6 h6;
 // Generated message map functions
 protected:
 	//{{AFX_MSG(CPolygon_FillView)
 	afx_msg void OnH2();
+	afx_msg void OnH3();
+	afx_msg void OnH4();
+	afx_msg void OnH5();
+	afx_msg void OnH6();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

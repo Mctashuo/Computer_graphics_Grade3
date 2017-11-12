@@ -45,7 +45,9 @@ Type=0
 HeaderFile=MainFrm.h
 ImplementationFile=MainFrm.cpp
 Filter=T
-LastObject=IDX_2
+LastObject=IDX_H6
+BaseClass=CFrameWnd
+VirtualFilter=fWC
 
 
 
@@ -69,7 +71,11 @@ Control4=IDOK,button,1342373889
 Type=1
 Class=CMainFrame
 Command1=IDX_2
-CommandCount=1
+Command2=IDX_H3
+Command3=IDX_H4
+Command4=IDX_H5
+Command5=IDX_H6
+CommandCount=5
 
 [ACL:IDR_MAINFRAME]
 Type=1

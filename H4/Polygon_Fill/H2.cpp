@@ -42,38 +42,3 @@ void H2::ReadPoint()
 	P2[3] = CPoint(3 * 1800 / 4 - b,800 / 2);
 
 }
-void H2::DrawRect(CDC *pDC,CPoint *P)
-{
-	CPoint T;
-	for(int i = 0;i < 4; i++)
-	{
-		if(i == 0)
-		{
-			pDC->MoveTo(P[i].x,P[i].y);
-			T = P[0];
-
-		}
-		else
-		{
-			pDC->LineTo(P[i].x,P[i].y);
-		}
-	}
-	pDC->LineTo(T.x,T.y);
-}
-
-
-void H2::FillRect(CDC *pDC,CPoint *P)
-{
-	CFill fill;
-	CPx Point[4];
-	for(int i = 0;i < 4;i++)
-	{
-		Point[i].x = P[i].x;
-		Point[i].y = P[i].y;
-	}
-	fill.SetPoint(Point,4);
-	fill.CreateBucket();
-	fill.CreateEdge();
-	fill.Gouraud(pDC);
-	
-}

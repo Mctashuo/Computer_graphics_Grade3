@@ -76,7 +76,11 @@ IDR_POLYGOTYPE          ICON    DISCARDABLE     "res\\Polygon_FillDoc.ico"
 
 IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
 BEGIN
-    MENUITEM "2",                           IDX_2
+    MENUITEM "    2",                       IDX_2
+    MENUITEM "     3",                      IDX_H3
+    MENUITEM "    4",                       IDX_H4
+    MENUITEM "    5",                       IDX_H5
+    MENUITEM "    6",                       IDX_H6
 END
 
 

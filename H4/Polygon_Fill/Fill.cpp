@@ -19,7 +19,7 @@ static char THIS_FILE[]=__FILE__;
 
 CFill::CFill()
 {
-
+	Color = RGB(0,255,0);
 }
 
 CFill::~CFill()
@@ -192,7 +192,7 @@ void CFill::Gouraud(CDC *pDC)//Ìî³ä¶à±ßÐÎ
 				xe=T1->x;
 				for(double x=xb;x<xe;x++)//×ó±ÕÓÒ¿ª
 				{
-					pDC->SetPixel(ROUND(x),CurrentB->ScanLine,RGB(255,0,0));
+					pDC->SetPixel(ROUND(x),CurrentB->ScanLine,Color);
 				}
 				Flag=FALSE;
 			}
