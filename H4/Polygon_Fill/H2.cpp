@@ -30,7 +30,7 @@ H2::~H2()
 void H2::ReadPoint()
 {
 	int a = 200;
-	P1[0] = CPoint(1800 / 4 - a,700 / 2 + a);
+	P1[0] = CPoint(1800 / 4 - a,800 / 2 + a);
 	P1[1] = CPoint(1800 / 4 + a,800 / 2 + a);
 	P1[2] = CPoint(1800 / 4 + a,800 / 2 - a);
 	P1[3] = CPoint(1800 / 4 - a,800 / 2 - a);
