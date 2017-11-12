@@ -6,19 +6,25 @@
 --------------------Configuration: Polygon_Fill - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP32C5.tmp" with contents
+Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP5804.tmp" with contents
 [
 /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Polygon_Fill.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
-"D:\work\Grade3\Graphic\H4\Polygon_Fill\Polygon_FillView.cpp"
+"D:\work\Grade3\Graphic\H4\Polygon_Fill\H8.cpp"
 ]
-Creating command line "cl.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSP32C5.tmp" 
-Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP32C6.tmp" with contents
+Creating command line "cl.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSP5804.tmp" 
+Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP5805.tmp" with contents
 [
 /nologo /subsystem:windows /incremental:yes /pdb:"Debug/Polygon_Fill.pdb" /debug /machine:I386 /out:"Debug/Polygon_Fill.exe" /pdbtype:sept 
 .\Debug\AET.obj
 .\Debug\Bucket.obj
 .\Debug\Fill.obj
+.\Debug\H.obj
 .\Debug\H2.obj
+.\Debug\H3.obj
+.\Debug\H4.obj
+.\Debug\H5.obj
+.\Debug\H6.obj
+.\Debug\HR.obj
 .\Debug\MainFrm.obj
 .\Debug\Polygon_Fill.obj
 .\Debug\Polygon_FillDoc.obj
@@ -26,17 +32,14 @@ Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP32C6.tmp" with 
 .\Debug\Px.obj
 .\Debug\StdAfx.obj
 .\Debug\Polygon_Fill.res
-.\Debug\H3.obj
-.\Debug\H4.obj
-.\Debug\H5.obj
-.\Debug\H.obj
-.\Debug\HR.obj
-.\Debug\H6.obj
+.\Debug\Edge.obj
+.\Debug\H7.obj
+.\Debug\H8.obj
 ]
-Creating command line "link.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSP32C6.tmp"
+Creating command line "link.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSP5805.tmp"
 <h3>Output Window</h3>
 Compiling...
-Polygon_FillView.cpp
+H8.cpp
 Linking...
 
 

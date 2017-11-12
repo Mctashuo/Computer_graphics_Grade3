@@ -98,6 +98,10 @@ SOURCE=.\Bucket.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\Edge.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\Fill.cpp
 # End Source File
 # Begin Source File
@@ -123,6 +127,14 @@ SOURCE=.\H5.cpp
 # Begin Source File
 
 SOURCE=.\H6.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\H7.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\H8.cpp
 # End Source File
 # Begin Source File
 
@@ -171,6 +183,10 @@ SOURCE=.\Bucket.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\Edge.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\Fill.h
 # End Source File
 # Begin Source File
@@ -196,6 +212,14 @@ SOURCE=.\H5.h
 # Begin Source File
 
 SOURCE=.\H6.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\H7.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\H8.h
 # End Source File
 # Begin Source File
 

@@ -45,7 +45,7 @@ Type=0
 HeaderFile=MainFrm.h
 ImplementationFile=MainFrm.cpp
 Filter=T
-LastObject=IDX_H6
+LastObject=IDX_H8
 BaseClass=CFrameWnd
 VirtualFilter=fWC
 
@@ -75,7 +75,9 @@ Command2=IDX_H3
 Command3=IDX_H4
 Command4=IDX_H5
 Command5=IDX_H6
-CommandCount=5
+Command6=IDX_H7
+Command7=IDX_H8
+CommandCount=7
 
 [ACL:IDR_MAINFRAME]
 Type=1

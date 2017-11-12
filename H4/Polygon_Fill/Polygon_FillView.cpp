@@ -25,6 +25,8 @@ BEGIN_MESSAGE_MAP(CPolygon_FillView, CView)
 	ON_COMMAND(IDX_H4, OnH4)
 	ON_COMMAND(IDX_H5, OnH5)
 	ON_COMMAND(IDX_H6, OnH6)
+	ON_COMMAND(IDX_H7, OnH7)
+	ON_COMMAND(IDX_H8, OnH8)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -167,4 +169,26 @@ void CPolygon_FillView::OnH6()
 	h6.FillRect(pDC,h6.P2,RGB(0,255,0));
 	h6.FillRect(pDC,h6.P3,RGB(255,255,0));
 	h6.FillRect(pDC,h6.P4,RGB(0,0,255));
+}
+
+void CPolygon_FillView::OnH7() 
+{
+	// TODO: Add your command handler code here
+	RedrawWindow();
+	CDC *pDC = GetDC();
+	h7.FillColor = RGB(0,255,0);
+	h7.Fill(pDC);
+
+}
+
+void CPolygon_FillView::OnH8() 
+{
+	// TODO: Add your command handler code here
+	RedrawWindow();
+	CDC *pDC = GetDC();
+	pDC->MoveTo(900,250);//»æÖÆÕ¤À¸
+	pDC->LineTo(900,800);
+	h8.FillColor = RGB(0,255,0);
+
+	h8.Fill(pDC);
 }
