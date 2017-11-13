@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CCut - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSPBF2A.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/CCut.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ   /c 
+"D:\work\Grade3\Graphic\H5\CCut\CCut.cpp"
+]
+Creating command line "cl.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSPBF2A.tmp" 
+Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/CCut.pdb" /debug /machine:I386 /out:"Debug/CCut.exe" /pdbtype:sept  .\Debug\CCut.obj .\Debug\StdAfx.obj .\Debug\MainFrm.obj .\Debug\CCutDoc.obj .\Debug\CCutView.obj .\Debug\CCut.res "
+<h3>Output Window</h3>
+Compiling...
+CCut.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+CCut.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
