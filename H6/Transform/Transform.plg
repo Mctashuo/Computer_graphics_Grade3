@@ -1,0 +1,42 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Transform - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP6437.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Transform.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\work\Grade3\Graphic\H6\Transform\TransformView.cpp"
+]
+Creating command line "cl.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSP6437.tmp" 
+Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP6438.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/Transform.pdb" /debug /machine:I386 /out:"Debug/Transform.exe" /pdbtype:sept 
+.\Debug\MainFrm.obj
+.\Debug\StdAfx.obj
+.\Debug\Transform.obj
+.\Debug\TransformDoc.obj
+.\Debug\TransformView.obj
+.\Debug\Transform.res
+.\Debug\H3.obj
+.\Debug\P3.obj
+.\Debug\P2.obj
+.\Debug\Face.obj
+.\Debug\H4.obj
+]
+Creating command line "link.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSP6438.tmp"
+<h3>Output Window</h3>
+Compiling...
+TransformView.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+Transform.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
