@@ -23,6 +23,7 @@ BEGIN_MESSAGE_MAP(CModelingView, CView)
 	//{{AFX_MSG_MAP(CModelingView)
 	ON_COMMAND(IDX_PERSPECTIVE, OnPerspective)
 	ON_WM_TIMER()
+	ON_COMMAND(IDX_Z_Buffer, OnZBuffer)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -103,4 +104,15 @@ void CModelingView::OnTimer(UINT nIDEvent)
 	p.Play(GetDC(),Rect);
 
 	CView::OnTimer(nIDEvent);
+}
+
+void CModelingView::OnZBuffer() 
+{
+	// TODO: Add your command handler code here
+	RedrawWindow();
+	CRect Rect;
+	GetClientRect(&Rect);
+	z.init();
+	z.DrawBuffer(GetDC(),Rect);
+
 }

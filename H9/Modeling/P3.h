@@ -19,6 +19,7 @@ public:
 	double x;
 	double y;
 	double z;
+	COLORREF Color;
 
 };
 

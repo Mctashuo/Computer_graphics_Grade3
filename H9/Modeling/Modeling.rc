@@ -77,6 +77,7 @@ IDR_MODELITYPE          ICON    DISCARDABLE     "res\\ModelingDoc.ico"
 IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
 BEGIN
     MENUITEM "Perspective",                 IDX_PERSPECTIVE
+    MENUITEM "Z_Buffer",                    IDX_Z_Buffer
 END
 
 

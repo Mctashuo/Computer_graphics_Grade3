@@ -46,7 +46,7 @@ Type=0
 HeaderFile=MainFrm.h
 ImplementationFile=MainFrm.cpp
 Filter=T
-LastObject=IDX_PERSPECTIVE
+LastObject=IDX_Z_Buffer
 
 
 
@@ -70,7 +70,8 @@ Control4=IDOK,button,1342373889
 Type=1
 Class=CMainFrame
 Command1=IDX_PERSPECTIVE
-CommandCount=1
+Command2=IDX_Z_Buffer
+CommandCount=2
 
 [ACL:IDR_MAINFRAME]
 Type=1

@@ -9,7 +9,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 #include "Perspective.h"
-
+#include "Z_Buffer.h"
 class CModelingView : public CView
 {
 protected: // create from serialization only
@@ -22,6 +22,7 @@ public:
 public:
 
 	CPerspective p;
+	CZ_Buffer z;
 // Operations
 public:
 	
@@ -49,6 +50,7 @@ protected:
 	//{{AFX_MSG(CModelingView)
 	afx_msg void OnPerspective();
 	afx_msg void OnTimer(UINT nIDEvent);
+	afx_msg void OnZBuffer();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

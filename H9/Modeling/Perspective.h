@@ -9,12 +9,10 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "P3.h"
-#include "Face.h"
-#include "P2.h"
 
+#include "Model.h"
 
-class CPerspective  
+class CPerspective : public CModel 
 {
 
 public:
@@ -30,16 +28,18 @@ public:
 
 	void ReadVertex();	//读取点表
 	
-	void ReadFace();
+	void ReadFace();	//读取面表
 	
 	void initPerPar();	//初始化透视参数
 	void Perspective(CP3 );		//透视投影
 	void init();
 
-	void DrawBuffer(CDC *,CRect);
+//	void DrawBuffer(CDC *,CRect);
+
 	void DrawFace(CDC *pDC,int NumberFace);
 
 	void DrawObject(CDC *pDC);
+
 	void Play(CDC *pDC,CRect);
 };
 

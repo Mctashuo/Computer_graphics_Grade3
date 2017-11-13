@@ -6,6 +6,42 @@
 --------------------Configuration: Modeling - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
+Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSPF65F.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Modeling.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\work\Grade3\Graphic\H9\Modeling\Z_Buffer.cpp"
+]
+Creating command line "cl.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSPF65F.tmp" 
+Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSPF660.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/Modeling.pdb" /debug /machine:I386 /out:"Debug/Modeling.exe" /pdbtype:sept 
+.\Debug\AET.obj
+.\Debug\Face.obj
+.\Debug\MainFrm.obj
+.\Debug\Model.obj
+.\Debug\Modeling.obj
+.\Debug\ModelingDoc.obj
+.\Debug\ModelingView.obj
+.\Debug\P2.obj
+.\Debug\P3.obj
+.\Debug\Perspective.obj
+.\Debug\StdAfx.obj
+.\Debug\Vector.obj
+.\Debug\Z_Buffer.obj
+.\Debug\Modeling.res
+.\Debug\Px.obj
+.\Debug\Bucket.obj
+]
+Creating command line "link.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSPF660.tmp"
+<h3>Output Window</h3>
+Compiling...
+Z_Buffer.cpp
+D:\work\Grade3\Graphic\H9\Modeling\Z_Buffer.cpp(128) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\work\Grade3\Graphic\H9\Modeling\Z_Buffer.cpp(133) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\work\Grade3\Graphic\H9\Modeling\Z_Buffer.cpp(137) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\work\Grade3\Graphic\H9\Modeling\Z_Buffer.cpp(171) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\work\Grade3\Graphic\H9\Modeling\Z_Buffer.cpp(186) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+Linking...
 
 
 

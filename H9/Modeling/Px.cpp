@@ -1,0 +1,34 @@
+// Px.cpp: implementation of the CPx class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "stdafx.h"
+#include "Modeling.h"
+#include "Px.h"
+
+#ifdef _DEBUG
+#undef THIS_FILE
+static char THIS_FILE[]=__FILE__;
+#define new DEBUG_NEW
+#endif
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+CPx::CPx()
+{
+
+}
+
+CPx::~CPx()
+{
+
+}
+
+
+CPx::CPx(double m_x,int m_y)
+{
+	x = m_x;
+	y = m_y;
+}
