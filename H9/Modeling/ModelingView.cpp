@@ -33,6 +33,7 @@ END_MESSAGE_MAP()
 CModelingView::CModelingView()
 {
 	// TODO: add construction code here
+	PER  = FALSE;
 
 }
 
@@ -55,6 +56,7 @@ void CModelingView::OnDraw(CDC* pDC)
 {
 	CModelingDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
+
 	// TODO: add draw code for native data here
 
 	//ReleaseDC(pDC);
@@ -93,6 +95,7 @@ void CModelingView::OnPerspective()
 	p.init();
 	p.DrawBuffer(GetDC(),Rect);
 	SetTimer(1,15,NULL);
+	PER = TRUE;
 
 }
 
@@ -101,14 +104,15 @@ void CModelingView::OnTimer(UINT nIDEvent)
 	// TODO: Add your message handler code here and/or call default
 	CRect Rect;
 	GetClientRect(&Rect);
-	p.Play(GetDC(),Rect);
-
+	if(PER == TRUE)
+		p.Play(GetDC(),Rect);
 	CView::OnTimer(nIDEvent);
 }
 
 void CModelingView::OnZBuffer() 
 {
 	// TODO: Add your command handler code here
+	PER = FALSE;
 	RedrawWindow();
 	CRect Rect;
 	GetClientRect(&Rect);

@@ -8,7 +8,7 @@
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
-
+#include "RGB.h"
 class CP3  
 {
 public:
@@ -19,7 +19,7 @@ public:
 	double x;
 	double y;
 	double z;
-	COLORREF Color;
+	CRGB   c;
 
 };
 

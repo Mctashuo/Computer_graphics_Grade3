@@ -14,6 +14,7 @@
 #include "P3.h"
 #include "AET.h"
 #include "Bucket.h"
+#include "RGB.h"
 class CZ_Buffer  : public CModel
 {
 
@@ -44,7 +45,7 @@ public:
 
 	void DrawObject(CDC *pDC);
 
-
+	CRGB Interpolation(double t,double t1,double t2,CRGB c1,CRGB c2);
 	void SetPoint(CP3 *,int);
 	void CreateBucket();
 	void CreateEdge();
@@ -52,6 +53,7 @@ public:
 	void EtOrder();
 	void Gouraud(CDC *pDC);
 	void init();
+
 };
 
 #endif // !defined(AFX_Z_BUFFER_H__4F0A5C95_8B89_407F_AB66_55F6C9BE36E6__INCLUDED_)

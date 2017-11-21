@@ -45,7 +45,7 @@ void CZ_Buffer::ReadVertex()
 	Pi[0][7].x=50;Pi[0][7].y=200;Pi[0][7].z=-100;
 	for(i=0;i<8;i++)//顶点颜色赋值
 	{
-		Pi[0][i].Color = red;
+		Pi[0][i].c=CRGB(1.0,0.0,0.0);
 	}
 	//蓝色长方条顶点的三维坐标(x,y,z)
 	Pi[1][0].x=150;Pi[1][0].y=-200;Pi[1][0].z=50;
@@ -56,13 +56,12 @@ void CZ_Buffer::ReadVertex()
 	Pi[1][5].x=-25;Pi[1][5].y=200;Pi[1][5].z=100;
 	Pi[1][6].x=-50;Pi[1][6].y=200;Pi[1][6].z=100;
 	Pi[1][7].x=-50;Pi[1][7].y=200;Pi[1][7].z=100;
-	Pi[1][0].Color = RGB(255,0,0);
 	for(i=0;i<8;i++)//顶点颜色赋值
 	{
-		Pi[0][i].Color=green;
+		Pi[1][i].c=CRGB(0.0,0.0,1.0);
 	}
 	//绿色长方条顶点的三维坐标(x,y,z)
-/*	Pi[2][0].x=-200;Pi[2][0].y=-150;Pi[2][0].z=-100;
+	Pi[2][0].x=-200;Pi[2][0].y=-150;Pi[2][0].z=-100;
 	Pi[2][1].x=-200;Pi[2][1].y=-150;Pi[2][1].z=-100;
 	Pi[2][2].x=-200;Pi[2][2].y=-125;Pi[2][2].z=-100;
 	Pi[2][3].x=-200;Pi[2][3].y=-125;Pi[2][3].z=-100;
@@ -70,11 +69,10 @@ void CZ_Buffer::ReadVertex()
 	Pi[2][5].x=200;Pi[2][5].y=-150;Pi[2][5].z=120;
 	Pi[2][6].x=200;Pi[2][6].y=-125;Pi[2][6].z=120;
 	Pi[2][7].x=200;Pi[2][7].y=-125;Pi[2][7].z=120;
-	Pi[0][0].Color = RGB(0,0,255);
 	for(i=0;i<8;i++)//顶点颜色赋值
 	{
-		Pi[0][i].Color=blue;
-	}*/
+		Pi[2][i].c=CRGB(0.0,1.0,0.0);
+	}
 
 }
 
@@ -102,6 +100,7 @@ void CZ_Buffer::DrawObject(CDC *pDC)
 				Point[nEdge].x=Pi[nBar][F[nFace].vI[nEdge]].x;
 				Point[nEdge].y=ROUND(Pi[nBar][F[nFace].vI[nEdge]].y);
 				Point[nEdge].z=Pi[nBar][F[nFace].vI[nEdge]].z;
+				Point[nEdge].c=Pi[nBar][F[nFace].vI[nEdge]].c;
 			}
 			SetPoint(Point,4);			
 			CreateBucket();//建立桶表
@@ -119,7 +118,7 @@ void CZ_Buffer::SetPoint(CP3 *p,int m)
 	{
 		P[i]=p[i];	
 	}
-	PNum=m;
+	PNum=m; 
 }
 
 void CZ_Buffer::CreateBucket()//创建桶表
@@ -170,9 +169,9 @@ void CZ_Buffer::CreateEdge()//创建边表
 			Edge->x=P[i].x;//计算ET表的值
 			Edge->yMax=P[j].y;
 			Edge->k=(P[j].x-P[i].x)/(P[j].y-P[i].y);//代表1/k
-			Edge->pb=P[i];//绑定顶点和颜色
+			Edge->pb=P[i];
 			Edge->pe=P[j];
-			Edge->Color = RGB(255,0,0);
+
 			Edge->pNext=NULL;
 			while(CurrentB->ScanLine!=P[i].y)//在桶内寻找当前边的yMin
 			{
@@ -187,7 +186,21 @@ void CZ_Buffer::CreateEdge()//创建边表
 			Edge->k=(P[i].x-P[j].x)/(P[i].y-P[j].y);
 			Edge->pb=P[i];
 			Edge->pe=P[j];
-			Edge->Color = RGB(0,255,0);
+			Edge->pNext=NULL;
+			while(CurrentB->ScanLine!=P[j].y)
+			{
+				CurrentB=CurrentB->pNext;
+			}
+		}
+		if(P[j].y == P[i].y)//边的终点比起点低
+		{
+			Edge=new CAET;
+			Edge->x=P[j].x;
+			Edge->yMax=P[i].y;
+			Edge->k=(P[i].x-P[j].x)/(P[i].y-P[j].y);
+			Edge->pb=P[i];
+			Edge->pe=P[j];
+
 			Edge->pNext=NULL;
 			while(CurrentB->ScanLine!=P[j].y)
 			{
@@ -237,7 +250,6 @@ void CZ_Buffer::Gouraud(CDC *pDC)//填充多边形
 			Edge->pb=CurrentE->pb;
 			Edge->pe=CurrentE->pe;
 			Edge->pNext=NULL;
-			Edge->Color = CurrentE->Color;
 			AddEt(Edge);
 		}
 		EtOrder();	
@@ -272,9 +284,12 @@ void CZ_Buffer::Gouraud(CDC *pDC)//填充多边形
 			}
 		}
 
-
 		BOOL Flag=FALSE;
 		double xb,xe;//扫描线的起点和终点坐标
+		CRGB Ca,Cb,Cf;//Ca、Cb代边上任意点的颜色，Cf代表面上任意点的颜色
+		Ca=Interpolation(CurrentB->ScanLine,HeadE->pb.y,HeadE->pe.y,HeadE->pb.c,HeadE->pe.c);
+		Cb=Interpolation(CurrentB->ScanLine,HeadE->pNext->pb.y,HeadE->pNext->pe.y,HeadE->pNext->pb.c,HeadE->pNext->pe.c);
+
 		for(T1=HeadE;T1!=NULL;T1=T1->pNext)
 		{
 			if(Flag==FALSE)
@@ -288,11 +303,13 @@ void CZ_Buffer::Gouraud(CDC *pDC)//填充多边形
 				xe=T1->x;
 				for(double x=xb;x<xe;x++)//左闭右开
 				{
-				
+					Cf=Interpolation(x,xb,xe,Ca,Cb);
 					if(CurDeep>=ZB[ROUND(x)+Width/2][CurrentB->ScanLine+Height/2])//如果新采样点的深度大于原采样点的深度
 					{
+						
 						ZB[ROUND(x)+Width/2][CurrentB->ScanLine+Height/2]=CurDeep;//xy坐标与数组下标保持一致
-						pDC->SetPixel(ROUND(x),CurrentB->ScanLine,HeadE->Color);
+						pDC->SetPixel(ROUND(x),CurrentB->ScanLine,RGB(Cf.red*255,Cf.green*255,Cf.blue*255));
+					
 					}
 					CurDeep+=DeepStep;					
 				}
@@ -420,4 +437,12 @@ void CZ_Buffer::init()
 	ReadFace();
 	//InitDeepBuffer();
 	//DrawBuffer();
+}
+
+
+CRGB CZ_Buffer::Interpolation(double t,double t1,double t2,CRGB c1,CRGB c2)//线性插值
+{
+	CRGB c;
+	c=(t-t2)/(t1-t2)*c1+(t-t1)/(t2-t1)*c2;
+	return c;
 }

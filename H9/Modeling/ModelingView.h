@@ -20,7 +20,7 @@ protected: // create from serialization only
 public:
 	CModelingDoc* GetDocument();
 public:
-
+	BOOL PER;
 	CPerspective p;
 	CZ_Buffer z;
 // Operations

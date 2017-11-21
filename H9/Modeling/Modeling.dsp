@@ -142,6 +142,10 @@ SOURCE=.\Px.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\RGB.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\StdAfx.cpp
 # ADD CPP /Yc"stdafx.h"
 # End Source File
@@ -208,6 +212,10 @@ SOURCE=.\Px.h
 # Begin Source File
 
 SOURCE=.\Resource.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\RGB.h
 # End Source File
 # Begin Source File
 

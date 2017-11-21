@@ -21,7 +21,7 @@ public:
 
 	CP3 pb;
 	CP3 pe;
-	COLORREF Color;
+	CP3 pc;
 	CAET *pNext;
 	
 
