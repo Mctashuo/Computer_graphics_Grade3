@@ -1,0 +1,51 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: realism - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP4598.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/realism.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\work\Grade3\Graphic\H10\realism\Phong.cpp"
+]
+Creating command line "cl.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSP4598.tmp" 
+Creating temporary file "C:\Users\Mctashuo\AppData\Local\Temp\RSP45A9.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/realism.pdb" /debug /machine:I386 /out:"Debug/realism.exe" /pdbtype:sept 
+.\Debug\AET.obj
+.\Debug\Bucket.obj
+.\Debug\Face.obj
+.\Debug\Fill.obj
+.\Debug\Hexagonal.obj
+.\Debug\MainFrm.obj
+.\Debug\P2.obj
+.\Debug\Pi2.obj
+.\Debug\realism.obj
+.\Debug\realismDoc.obj
+.\Debug\realismView.obj
+.\Debug\RGB.obj
+.\Debug\StdAfx.obj
+.\Debug\realism.res
+.\Debug\Light.obj
+.\Debug\P3.obj
+.\Debug\Vector.obj
+.\Debug\Material.obj
+.\Debug\Lighting.obj
+.\Debug\Phong.obj
+]
+Creating command line "link.exe @C:\Users\Mctashuo\AppData\Local\Temp\RSP45A9.tmp"
+<h3>Output Window</h3>
+Compiling...
+Phong.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+realism.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
