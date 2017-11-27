@@ -42,6 +42,7 @@ public:
 public:
 	CHexagonal he;
 	CPhong ph;
+	BOOL PER;
 protected:
 
 // Generated message map functions
@@ -49,6 +50,13 @@ protected:
 	//{{AFX_MSG(CRealismView)
 	afx_msg void OnHexagonal();
 	afx_msg void OnDrawrec();
+	afx_msg void OnTimer(UINT nIDEvent);
+	afx_msg void OnRed();
+	afx_msg void OnGreen();
+	afx_msg void OnBlue();
+	afx_msg void OnGold();
+	afx_msg void OnRuby();
+	afx_msg void OnArgentum();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

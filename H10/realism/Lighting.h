@@ -19,11 +19,11 @@ public:
 	virtual ~CLighting();
 	CLighting(int);
 
-	CRGB Lighting(CP3,CP3,CVector,CMaterial *);//å…‰ç…§	
+	CRGB Lighting(CP3,CP3,CVector,CMaterial *);//¹âÕÕ	
 public:
-	int LightNum;//å…‰æºæ•°é‡
-	CLight *Light;//å…‰æºæ•°ç»„
-	CRGB Enviroment;//ç¯å¢ƒå…‰
+	int LightNum;//¹âÔ´ÊıÁ¿
+	CLight *Light;//¹âÔ´Êı×é
+	CRGB Enviroment;//»·¾³¹â
 };
 
 #endif // !defined(AFX_LIGHTING_H__6B97AE81_E0B1_4036_B451_3094A98F335D__INCLUDED_)

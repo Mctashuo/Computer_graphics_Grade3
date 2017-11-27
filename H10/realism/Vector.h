@@ -18,17 +18,17 @@ public:
 
 	virtual ~CVector();
 
-	CVector Unit();//å•ä½çŸ¢é‡
-	double X();//çŸ¢é‡çš„xåæ ‡
-	double Y();//çŸ¢é‡çš„yåæ ‡
-	double Z();//çŸ¢é‡çš„zåæ ‡
-	double Mold();//çŸ¢é‡çš„æ¨¡
-	friend CVector operator +(CVector &,CVector &);//çŸ¢é‡å’Œ
-	friend CVector operator -(CVector &,CVector &);//çŸ¢é‡å·®
-	friend CVector operator *(CVector &,double);//çŸ¢é‡æ•°ä¹˜
+	CVector Unit();//µ¥Î»Ê¸Á¿
+	double X();//Ê¸Á¿µÄx×ø±ê
+	double Y();//Ê¸Á¿µÄy×ø±ê
+	double Z();//Ê¸Á¿µÄz×ø±ê
+	double Mold();//Ê¸Á¿µÄÄ£
+	friend CVector operator +(CVector &,CVector &);//Ê¸Á¿ºÍ
+	friend CVector operator -(CVector &,CVector &);//Ê¸Á¿²î
+	friend CVector operator *(CVector &,double);//Ê¸Á¿Êı³Ë
 	friend CVector operator * (CVector &v1,CVector &v2);
-	friend CVector operator /(CVector &,double);//çŸ¢é‡æ•°é™¤
-	friend double Dot(CVector &,CVector &);//çŸ¢é‡ç‚¹ç§¯
+	friend CVector operator /(CVector &,double);//Ê¸Á¿Êı³ı
+	friend double Dot(CVector &,CVector &);//Ê¸Á¿µã»ı
 	
 public:
 	double x,y,z;

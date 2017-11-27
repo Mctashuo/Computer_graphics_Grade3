@@ -9,10 +9,10 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "Vector.h"//åŒ…å«çŸ¢é‡ç±»
-#include "Face.h"//åŒ…å«é¢ç±»
-#include "Lighting.h"//åŒ…å«å…‰ç…§ç±»
-#include "Fill.h"//åŒ…å«å¡«å……ç±»
+#include "Vector.h"//°üº¬Ê¸Á¿Àà
+#include "Face.h"//°üº¬ÃæÀà
+#include "Lighting.h"//°üº¬¹âÕÕÀà
+#include "Fill.h"//°üº¬Ìî³äÀà
 #include "Light.h"
 #include "P3.h"
 class CPhong  
@@ -27,13 +27,15 @@ public:
 	void PerProject(CP3);
 	void DoubleBuffer(CDC *pDC, CRect Rect);
 	void DrawObject(CDC *);
+	void PlayW(CDC *pDC,CRect);
+	void init();
 
 public:
 	double R,Theta,Phi;
-	double d;//è§†è·
-	CP3 P[8];//ç‚¹è¡¨
+	double d;//ÊÓ¾à
+	CP3 P[8];//µã±í
 	CFace F[6];
-	double k[9];//è¿ç®—å¸¸é‡
+	double k[9];//ÔËËã³£Á¿
 	CP3 ViewPoint;
 	CP2 ScreenP;
 	BOOL Play;

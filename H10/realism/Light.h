@@ -17,22 +17,22 @@ public:
 	CLight();
 	virtual ~CLight();
 
-	void SetDiffuse(CRGB);		//æ¼«åå°„å…‰
-	void SetMirror(CRGB);		//é•œé¢åå°„å…‰
+	void SetDiffuse(CRGB);		//Âş·´Éä¹â
+	void SetMirror(CRGB);		//¾µÃæ·´Éä¹â
 
-	void SetPosition(double,double,double);		//è®¾ç½®å…‰æºä½ç½®
+	void SetPosition(double,double,double);		//ÉèÖÃ¹âÔ´Î»ÖÃ
 	void SetGlobal(double, double, double);
 	void GlobalToXYZ();
 	void SetCoef(double, double,double);
 
-	void SetOpen(BOOL);		//å¼€å…³
+	void SetOpen(BOOL);		//¿ª¹Ø
 
 public:
 	CRGB L_Diffuse;
 	CRGB L_Mirror;
 	CP3 L_Position;
-	double L_R,L_Phi,L_Theta;		//å…‰æºçƒåæ ‡
-	double L_C0,L_C1,L_C2;		//è¡°å‡æŒ‡æ•°
+	double L_R,L_Phi,L_Theta;		//¹âÔ´Çò×ø±ê
+	double L_C0,L_C1,L_C2;		//Ë¥¼õÖ¸Êı
 	BOOL L_Open;
 
 };

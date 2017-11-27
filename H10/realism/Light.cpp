@@ -24,11 +24,11 @@ CLight::CLight()
 	L_Diffuse=CRGB(1.0,1.0,1.0);
 	L_Mirror=CRGB(1.0,1.0,1.0);
 	L_Position.x=1000.0,L_Position.y=1000.0,L_Position.z=1000;
-	L_R=1000,L_Phi=0,L_Theta=0;//å…‰æºä½ç½®çƒåæ ‡
+	L_R=1000,L_Phi=0,L_Theta=0;//¹âÔ´Î»ÖÃÇò×ø±ê
 	L_C0=1.0;
 	L_C1=1.0;
 	L_C2=1.0;
-	L_Open=TRUE;//å…‰å¼€å¯
+	L_Open=TRUE;//¹â¿ªÆô
 }
 
 CLight::~CLight()

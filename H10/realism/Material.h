@@ -14,10 +14,10 @@ class CMaterial
 {
 public:
 	CMaterial();
-	void SetEnviroment(CRGB);//ç¯å¢ƒå…‰
-	void SetDiffuse(CRGB);//æ¼«åå°„
-	void SetMirror(CRGB);//é•œé¢åå°„
-	void SetExp(double);//é«˜å…‰æŒ‡æ•°
+	void SetEnviroment(CRGB);//»·¾³¹â
+	void SetDiffuse(CRGB);//Âş·´Éä
+	void SetMirror(CRGB);//¾µÃæ·´Éä
+	void SetExp(double);//¸ß¹âÖ¸Êı
 public:
 	CRGB M_Enviroment;
 	CRGB M_Diffuse;

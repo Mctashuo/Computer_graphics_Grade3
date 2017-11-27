@@ -49,51 +49,51 @@ CLighting::CLighting(int lightnum)
 CRGB CLighting::Lighting(CP3 ViewPoint,CP3 Point,CVector Normal,CMaterial *pMaterial)
 {	
 	double LastR=0.0,LastG=0.0,LastB=0.0;
-	for(int i=0;i<LightNum;i++)//LightNumä¸ºå…‰æºæ•°é‡
+	for(int i=0;i<LightNum;i++)//LightNumÎª¹âÔ´ÊýÁ¿
 	{	
 		Light[i].GlobalToXYZ();
 		if(Light[i].L_Open)
 		{		
 			double IRed=0,IGreen=0,IBlue=0;
-			//ç¬¬ä¸€æ­¥ï¼Œè®¡ç®—è¡°å‡å› å­
+			//µÚÒ»²½£¬¼ÆËãË¥¼õÒò×Ó
 			double c0=Light[i].L_C0;
 			double c1=Light[i].L_C1;
 			double c2=Light[i].L_C2;
-			CVector VL(Point,Light[i].L_Position);//æŒ‡å‘å…‰æºçš„çŸ¢é‡
-			double d=VL.Mold();//å…‰ä¼ æ’­çš„è·ç¦»ï¼Œç­‰äºŽå‘é‡VLçš„æ¨¡
-			double a=(1.0/(c0+c1*d+c2*d*d));//äºŒæ¬¡è¡°å‡å‡½æ•°
+			CVector VL(Point,Light[i].L_Position);//Ö¸Ïò¹âÔ´µÄÊ¸Á¿
+			double d=VL.Mold();//¹â´«²¥µÄ¾àÀë£¬µÈÓÚÏòÁ¿VLµÄÄ£
+			double a=(1.0/(c0+c1*d+c2*d*d));//¶þ´ÎË¥¼õº¯Êý
 			a=MIN(1.0,a);				
-			//ç¬¬äºŒæ­¥ï¼ŒåŠ å…¥æ¼«åå°„å…‰
-			VL=VL.Unit();//å…‰çŸ¢é‡å•ä½åŒ–
+			//µÚ¶þ²½£¬¼ÓÈëÂþ·´Éä¹â
+			VL=VL.Unit();//¹âÊ¸Á¿µ¥Î»»¯
 			CVector VN=Normal;
-			VN=VN.Unit();//æ³•çŸ¢é‡å•ä½åŒ–			
+			VN=VN.Unit();//·¨Ê¸Á¿µ¥Î»»¯			
 			double CosTheta=Dot(VL,VN);
-			CosTheta=MAX(0.0,CosTheta);//thetaå¤§äºŽPI/2ç…§å°„ä¸åˆ°
+			CosTheta=MAX(0.0,CosTheta);//theta´óÓÚPI/2ÕÕÉä²»µ½
 			IRed+=Light[i].L_Diffuse.red*pMaterial->M_Diffuse.red*CosTheta*a;
 			IGreen+=Light[i].L_Diffuse.green*pMaterial->M_Diffuse.green*CosTheta*a;
 			IBlue+=Light[i].L_Diffuse.blue*pMaterial->M_Diffuse.blue*CosTheta*a;
-			//ç¬¬ä¸‰æ­¥ï¼ŒåŠ å…¥é•œé¢åå°„å…‰
-			if(CosTheta>0 && CosTheta<PI/2)//å…‰çº¿å¯ä»¥ç…§å°„åˆ°ç‰©ä½“
+			//µÚÈý²½£¬¼ÓÈë¾µÃæ·´Éä¹â
+			if(CosTheta>0 && CosTheta<PI/2)//¹âÏß¿ÉÒÔÕÕÉäµ½ÎïÌå
 			{
-				CVector VS(Point,ViewPoint);//VSè§†çŸ¢é‡
+				CVector VS(Point,ViewPoint);//VSÊÓÊ¸Á¿
 				VS=VS.Unit();
-				CVector VH=(VL+VS)/(VL+VS).Mold();//å¹³åˆ†çŸ¢é‡	
+				CVector VH=(VL+VS)/(VL+VS).Mold();//Æ½·ÖÊ¸Á¿	
 				double n=pow(Dot(VH,VN),pMaterial->M_Exp);
 				IRed+=Light[i].L_Mirror.red*pMaterial->M_Mirror.red*n*a;
 				IGreen+=Light[i].L_Mirror.green*pMaterial->M_Mirror.green*n*a;
 				IBlue+=Light[i].L_Mirror.blue*pMaterial->M_Mirror.blue*n*a;
 			}
-			//ç´¯åŠ åˆ°æœ€åŽçš„é¢œè‰²
+			//ÀÛ¼Óµ½×îºóµÄÑÕÉ«
 			LastR+=IRed;
 			LastG+=IGreen;
 			LastB+=IBlue;
 		}
 	}
-	LastR+=Enviroment.red*pMaterial->M_Enviroment.red;//åŠ å…¥çŽ¯å¢ƒå…‰
+	LastR+=Enviroment.red*pMaterial->M_Enviroment.red;//¼ÓÈë»·¾³¹â
 	LastG+=Enviroment.green*pMaterial->M_Enviroment.green;
 	LastB+=Enviroment.blue*pMaterial->M_Enviroment.blue;
-	LastR = (LastR < 0.0) ? 0.0 : ((LastR > 1.0) ? 1.0 : LastR);//é¢œè‰²å½’ä¸€åˆ°[0,1]åŒºé—´
+	LastR = (LastR < 0.0) ? 0.0 : ((LastR > 1.0) ? 1.0 : LastR);//ÑÕÉ«¹éÒ»µ½[0,1]Çø¼ä
 	LastG = (LastG < 0.0) ? 0.0 : ((LastG > 1.0) ? 1.0 : LastG);
 	LastB = (LastB < 0.0) ? 0.0 : ((LastB > 1.0) ? 1.0 : LastB);
-	return CRGB(LastR,LastG,LastB);//é¢œè‰²èµ‹å€¼
+	return CRGB(LastR,LastG,LastB);//ÑÕÉ«¸³Öµ
 }

@@ -38,7 +38,7 @@ ImplementationFile=realismView.cpp
 Filter=C
 BaseClass=CView
 VirtualFilter=VWC
-LastObject=CRealismView
+LastObject=IDX_ARGENTUM
 
 
 [CLS:CMainFrame]
@@ -46,7 +46,7 @@ Type=0
 HeaderFile=MainFrm.h
 ImplementationFile=MainFrm.cpp
 Filter=T
-LastObject=IDX_DRAWREC
+LastObject=IDX_GREEN
 
 
 
